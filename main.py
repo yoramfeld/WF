@@ -4,8 +4,8 @@ import streamlit as st
 
 api_key='7f0804cb4aab571b1c8921f4d82e1815' #api key for open weather map site
 show_line=0 #to handle multi appearnces of a city
-city_name=input("Enter city name: ") #e.g. 'Birmingham' #'Saint Petersburg' #'Jerusalem' #London
-#city_name=st.text_input("Enter city name: ") #e.g. 'Birmingham' #'Saint Petersburg' #'Jerusalem' #London
+#city_name=input("Enter city name: ") #e.g. 'Birmingham' #'Saint Petersburg' #'Jerusalem' #London
+city_name=st.text_input("Enter city name: ") #e.g. 'Birmingham' #'Saint Petersburg' #'Jerusalem' #London
 if city_name:
     location=requests.get('http://api.openweathermap.org/geo/1.0/direct?q='+city_name+'&limit=50&appid='+api_key)
     #print (location.json())
