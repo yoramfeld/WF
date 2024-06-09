@@ -1,11 +1,8 @@
 import requests
 from datetime import datetime, timedelta
-import streamlit as st
-
 api_key='7f0804cb4aab571b1c8921f4d82e1815' #api key for open weather map site
 show_line=0 #to handle multi appearnces of a city
-#city_name=input("Enter city name: ") #e.g. 'Birmingham' #'Saint Petersburg' #'Jerusalem' #London
-city_name=st.text_input("Enter city name: ") #e.g. 'Birmingham' #'Saint Petersburg' #'Jerusalem' #London
+city_name=input("Enter city name: ") #e.g. 'Birmingham' #'Saint Petersburg' #'Jerusalem' #London
 if city_name:
     location=requests.get('http://api.openweathermap.org/geo/1.0/direct?q='+city_name+'&limit=50&appid='+api_key)
     #print (location.json())
@@ -42,4 +39,4 @@ if city_name:
       utcnow=datetime.utcnow()
       remote_time=utcnow+timedelta(seconds=seconds_from_utc)
       print ('The local time over there is',remote_time.strftime("%H:%M"),"on",remote_time.strftime("%d/%m"),end=' ')
-      print ("while your local time is:",datetime.now().strftime("%H:%M"),"on",datetime.now().strftime("%d/%m")) #print the local time and date
+      print ("while you are at",datetime.now().strftime("%H:%M"),"on",datetime.now().strftime("%d/%m")) #print the local time and date
