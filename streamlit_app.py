@@ -17,18 +17,20 @@ def main():
             else:
                 if no_of_cities_in_that_name > 1:  # allow choosing one of a list
                     st.write(f"\nIdentified {no_of_cities_in_that_name} cities under {city_name}")
+                    options=[]
                     for num in range(len(location.json())):
                         current = location.json()[num]
                         state = '' if not 'state' in current else current['state']  # Protect from no state.
                         # e.g. several Hiroshima instances have no state
-                        st.write(f"{num + 1}. {state} ({current['country']}) at {current['lon']} & {current['lat']}")
+                        opt=print(f"{state} ({current['country']}) at {current['lon']} & {current['lat']}")
+                        options.append(opt)
 
-                    line_no = st.number_input(f"Pick between 1 and {len(location.json())}:", min_value=1,
-                                              max_value=len(location.json()))  # ask to pick one from the list
-                    show_line = int(line_no) - 1  # mark the list element to show
+                    options_list=', '.join(['"{}"'.format(value) for value in options])
+                    pick = st.selectbox("Pick one", (options_list))
+
+                    show_line=options_list.index(pick)
                 else:
                     show_line = 0
-
                 current = location.json()[show_line]
                 state = '' if not 'state' in current else current['state']  # Protect from no state.
                 # e.g. several Hiroshima instances have no state
@@ -45,7 +47,7 @@ def main():
                 remote_time = utcnow + timedelta(seconds=seconds_from_utc)
                 st.write('The local time over there is', remote_time.strftime("%H:%M"), "on",
                          remote_time.strftime("%d/%m"), end=' ')
-                st.write("while you are at", datetime.now().strftime("%H:%M"), "on", datetime.now().strftime("%d/%m"))  # print the local time and date
+                st.write("while this app server is at", datetime.now().strftime("%H:%M"), "on", datetime.now().strftime("%d/%m"))  # print the local time and date
 
 if __name__ == "__main__":
     main()
