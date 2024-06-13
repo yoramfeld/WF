@@ -8,8 +8,8 @@ to get the weather data in that location and the relative timezone.
 If multiple cities match the city name, the user will be able to choose
 from them and get the weather for the selected location.
 
-The project demo is at https://fpc7cfvdeiztfhwar9u5vu.streamlit.app
-The project code is at https://github.com/yoramfeld/WF
-The streamlit code filename is 'streamlit_app.py'
-The pycharm code filename is 'main.py'
+The project demo is at https://fpc7cfvdeiztfhwar9u5vu.streamlit.app  
+The project code is at https://github.com/yoramfeld/WF  
+The streamlit code filename is 'streamlit_app.py'  
+The pycharm code filename is 'main.py'  
 The Colab code filename is 'main.ipynb'
