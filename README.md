@@ -1,4 +1,4 @@
-# Python project #1 - BIDS17
+# Python project #1 - BIU DS17
 ## Weather forecast
 yoramfeld@gmail.com
 
