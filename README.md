@@ -2,9 +2,9 @@
 ## Weather forecast
 yoramfeld@gmail.com
 
-The code uses an API key that I generated on openweathermap site and it 
-calls the site with a city name that the user enters and later in the code with location data 
-to get the weather data in that location and the relative timezone.
+The code uses an API key that I generated on openweathermap site.  
+It calls the site with a city name that the user enters and later in the code  
+it calls it again with location data to get the weather data in that location and the relative timezone.
 If multiple cities match the city name, the user will be able to choose
 from them and get the weather for the selected location.
 
